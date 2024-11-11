@@ -1,0 +1,124 @@
+/* Add transparent background with overlay text for entire page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('logoschool/background.jpg'); /* Make sure this path is correct */
+    background-size: 100% 100%; /* Ensure the image covers the entire screen */
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    overflow: hidden;
+}
+
+.home-page {
+    background-image: url(''); /* Path to your home page background */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keep the background fixed */
+}
+
+
+/* Ensure overlay text is correctly positioned */
+.container::before {
+    content: "BSCOMPTECH 2B";
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.2); /* Faint text */
+    z-index: -1; /* Keeps text behind the form */
+}
+
+/* Style for forms (login & signup) */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; /* Keeps form width consistent */
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent background for form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Makes sure the form is on top of the background */
+}
+
+/* Input Fields Styling */
+input[type="text"], input[type="password"], input[type="email"] {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 100%; /* Full width to make them align properly */
+}
+
+/* Button Styling */
+button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Product Layout */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    margin-top: 20px;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.product {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+}
+
+.product img {
+    width: 200px; /* Ensures the image width adapts properly */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product h3 {
+    color: #333;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.product p {
+    color: #666;
+    font-size: 30px;
+}
+
+.product button {
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: large;
+}
+
+.product button:hover {
+    background-color: #555;
+}
